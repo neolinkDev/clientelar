@@ -4,15 +4,24 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Layout from './components/Layout';
+import NewClientPage from './pages/NewClientPage';
+import IndexPage from './pages/IndexPage';
 
 const router = createBrowserRouter([
   {
    path: '/',
-   element: <h1>Inicio</h1> 
-  },
-  {
-    path: '/nosotros',
-    element: <h1>Nosotros</h1> 
+   element: <Layout />,
+   children:[
+    {
+      index: true,
+      element: <IndexPage />
+    },
+    {
+      path: '/clientes/nuevo',
+      element: <NewClientPage />
+    }
+   ]
   }
 ])
 

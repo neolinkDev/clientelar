@@ -32,6 +32,7 @@ function NewClientPage() {
 
         <Form 
           method='POST'
+          noValidate
         >
           <FormComponent />
           

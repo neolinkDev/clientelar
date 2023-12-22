@@ -1,6 +1,9 @@
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 
 function Layout() {
+
+  const location = useLocation();
+
   return (
     <div className="md:flex md:min-h-screen">
 
@@ -11,6 +14,24 @@ function Layout() {
         >
             Clientelar
         </h2>
+
+        <nav className="mt-10">
+
+          <Link 
+            className={`${location.pathname === '/' ? 'text-[#d5dce2]' : 'text-[#8598ab]' } text-2xl block text-[#8598ab] mt-2 hover:text-[#d5dce2]`} 
+            to='/'
+          >
+            Clientes
+          </Link>
+
+          <Link 
+            className={`${location.pathname === '/clientes/nuevo' ? 'text-[#d5dce2]' : 'text-[#8598ab]' } text-2xl block text-[#8598ab] mt-2 hover:text-[#d5dce2]`} 
+            to='/clientes/nuevo'
+          >
+            Nuevo Cliente
+          </Link>
+
+        </nav>
 
       </aside>
 

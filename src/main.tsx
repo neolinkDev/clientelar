@@ -7,6 +7,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
 import NewClientPage from './pages/NewClientPage';
 import IndexPage from './pages/IndexPage';
+import { loader as clientsLoader } from './supabase/clients/loader';
+import { action as newClientPageAction } from './actions/action1';
+
 
 const router = createBrowserRouter([
   {
@@ -15,11 +18,13 @@ const router = createBrowserRouter([
    children:[
     {
       index: true,
-      element: <IndexPage />
+      element: <IndexPage />,
+      loader: clientsLoader
     },
     {
       path: '/clientes/nuevo',
-      element: <NewClientPage />
+      element: <NewClientPage />,
+      action: newClientPageAction
     }
    ]
   }

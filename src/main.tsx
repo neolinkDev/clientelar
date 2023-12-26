@@ -9,6 +9,7 @@ import NewClientPage from './pages/NewClientPage';
 import IndexPage from './pages/IndexPage';
 import { loader as clientsLoader } from './supabase/clients/loader';
 import { action as newClientPageAction } from './actions/action1';
+import { ErrorPage } from './pages/ErrorPage';
 
 
 const router = createBrowserRouter([
@@ -19,7 +20,8 @@ const router = createBrowserRouter([
     {
       index: true,
       element: <IndexPage />,
-      loader: clientsLoader
+      loader: clientsLoader,
+      errorElement: <ErrorPage />
     },
     {
       path: '/clientes/nuevo',

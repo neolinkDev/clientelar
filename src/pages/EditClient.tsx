@@ -1,0 +1,50 @@
+import { Form, useActionData, useLoaderData, useNavigate } from 'react-router-dom';
+import { FormComponent } from '../components/Form';
+import { Clients, ErrorType } from '../interfaces';
+import { Error } from '../components/Error';
+
+export const EditClient = () => {
+  
+  const navigate = useNavigate();
+  const client = useLoaderData() as Clients;
+  const errors = useActionData() as ErrorType;
+  // console.log(client);
+
+  return (
+    <>
+      <h1 className="font-black text-4xl text-[#425162] capitalize">
+        editar cliente
+      </h1>
+      <p className="mb-3">Edita los datos de un cliente</p>
+
+      <div className="flex justify-end">
+        <button
+          className="inline-block mb-3 rounded bg-[#425162] px-3 py-1 text-xs font-medium text-white hover:bg-[#394553] uppercase"
+          onClick={() => navigate(-1)}
+        >
+          volver
+        </button>
+      </div>
+
+      <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10">
+
+        {
+          errors?.length && errors.map((error, index) => <Error key={index}>{error}</Error>)
+        }
+
+        <Form method="POST" noValidate>
+          <FormComponent client={ client } />
+
+          <div className="text-right">
+            <button
+              type="submit"
+              className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mt-4"
+            >
+              Guardar Cambios
+            </button>
+          </div>
+        </Form>
+      </div>
+    </>
+  );
+};

@@ -7,7 +7,7 @@ import { Client } from '../components/Client';
 function IndexPage() {
 
   const clients = useLoaderData() as Clients[];
-  console.log(clients)
+  // console.log(clients)
 
   return (
     <>

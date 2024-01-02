@@ -1,4 +1,13 @@
-export const FormComponent = () => {
+import { Clients } from '../interfaces';
+
+interface FormProps {
+  client?: Clients;
+}
+
+export const FormComponent = ({ client }: FormProps) => {
+
+
+
   return (
     <>
       <div className="mb-4">
@@ -12,6 +21,7 @@ export const FormComponent = () => {
           type="text"
           id="name"
           name="name"
+          defaultValue={client && client.name ? client.name : ''}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Nombre Cliente"
           // required
@@ -29,6 +39,7 @@ export const FormComponent = () => {
           type="email"
           id="email"
           name="email"
+          defaultValue={client && client.email ? client.email : ''}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="tucorreo@company.com"
           // required
@@ -46,6 +57,7 @@ export const FormComponent = () => {
           type="tel"
           id="phone"
           name="phone"
+          defaultValue={client && client.phone ? client.phone : ''}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="123-45-678"
           // required
@@ -63,6 +75,7 @@ export const FormComponent = () => {
           type="text"
           id="company_name"
           name="company_name"
+          defaultValue={client && client.company_name ? client.company_name : ''}
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Empresa del Cliente"
           // required

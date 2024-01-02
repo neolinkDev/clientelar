@@ -10,3 +10,9 @@ export interface Clients {
 export interface ClientProps {
   client: Clients;
 }
+
+// export interface RouteParams {
+//   id: string;
+// }
+
+export type ErrorType = string[];

@@ -1,8 +1,9 @@
 import { Form, useActionData, useNavigate } from 'react-router-dom';
 import { FormComponent } from '../components/Form';
 import { Error } from '../components/Error'
+import { ErrorType } from '../interfaces';
 
-type ErrorType = string[];
+
 
 function NewClientPage() {
 

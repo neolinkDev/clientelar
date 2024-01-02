@@ -1,8 +1,11 @@
+import { useNavigate } from 'react-router-dom';
 import { ClientProps } from '../interfaces';
 
 
 
 export const Client = ({ client }: ClientProps) => {
+
+  const navigate = useNavigate()
 
   const { id, name, email, phone, company_name: company } = client;
 
@@ -20,11 +23,15 @@ export const Client = ({ client }: ClientProps) => {
 
       <td className="flex gap-2 px-4 py-2">
 
-        <button className="inline-block rounded bg-cyan-600 px-4 py-2 text-xs font-medium text-white hover:bg-cyan-700 uppercase">
+        <button 
+          className="inline-block rounded bg-cyan-600 px-4 py-2 text-xs font-medium text-white hover:bg-cyan-700 uppercase"
+          onClick={() => navigate(`/clientes/${id}/editar`) }
+        >
           Editar
         </button>
 
-        <button className="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700 uppercase">
+        <button 
+          className="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700 uppercase">
           Eliminar
         </button>
 

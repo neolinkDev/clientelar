@@ -12,6 +12,8 @@ import { loader as clientsLoader } from './supabase/clients/loader';
 import { loader as editClientLoader } from './supabase/clients/loader2';
 import { action as newClientPageAction } from './actions/action1';
 import { action as editClientAction } from './actions/action2';
+import { action as deleteClientAction } from './actions/action3';
+
 import { ErrorPage } from './pages/ErrorPage';
 
 const router = createBrowserRouter([
@@ -36,6 +38,10 @@ const router = createBrowserRouter([
       loader: editClientLoader,
       action: editClientAction,
       errorElement: <ErrorPage />
+    },
+    {
+      path: '/clientes/:id/eliminar',
+      action: deleteClientAction
     }
    ]
   }

@@ -67,3 +67,18 @@ export async function updateClient(
 
   return putClient;
 }
+
+//
+export async function deleteClient(id: string){
+  const { data: deletingClient, error } = await supabase
+    .from('clientes')
+    .delete()
+    .eq('id', id);
+
+  if (error) {
+    console.log(error);
+    throw new Error(`No se pudo actualizar el cliente con el ID ${id}`);
+  }
+
+  return deletingClient;
+}

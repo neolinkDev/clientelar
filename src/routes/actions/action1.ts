@@ -1,5 +1,5 @@
 import { redirect } from 'react-router-dom';
-import { addClient } from '../supabase/apiClients';
+import { addClient } from '../../supabase/apiClients';
 
 export async function action({ request }: { request: Request }) {
   const formData = await request.formData();

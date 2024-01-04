@@ -4,28 +4,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Layout from './components/Layout';
+import Root from './routes/Root';
 import NewClientPage from './pages/NewClientPage';
 import IndexPage from './pages/IndexPage';
 import { EditClient } from './pages/EditClient';
-import { loader as clientsLoader } from './supabase/clients/loader';
-import { loader as editClientLoader } from './supabase/clients/loader2';
-import { action as newClientPageAction } from './actions/action1';
-import { action as editClientAction } from './actions/action2';
-import { action as deleteClientAction } from './actions/action3';
+import { loader as clientsLoader } from './routes/loaders/loader1';
+import { loader as editClientLoader } from './routes/loaders/loader2';
+import { action as newClientPageAction } from './routes/actions/action1';
+import { action as editClientAction } from './routes/actions/action2';
+import { action as deleteClientAction } from './routes/actions/action3';
 
 import { ErrorPage } from './pages/ErrorPage';
 
 const router = createBrowserRouter([
   {
    path: '/',
-   element: <Layout />,
+   element: <Root />,
+   errorElement: <ErrorPage />,
    children:[
     {
       index: true,
       element: <IndexPage />,
       loader: clientsLoader,
-      errorElement: <ErrorPage />
+      // errorElement: <ErrorPage />
     },
     {
       path: '/clientes/nuevo',
@@ -33,14 +34,14 @@ const router = createBrowserRouter([
       action: newClientPageAction
     },
     {
-      path: '/clientes/:id/editar',
+      path: '/clientes/:clientID/editar',
       element: <EditClient />,
       loader: editClientLoader,
       action: editClientAction,
-      errorElement: <ErrorPage />
+      // errorElement: <ErrorPage />
     },
     {
-      path: '/clientes/:id/eliminar',
+      path: '/clientes/:clientID/eliminar',
       action: deleteClientAction
     }
    ]

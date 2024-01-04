@@ -1,6 +1,6 @@
 import { Params, redirect } from "react-router-dom";
 // import { RouteParams } from "../interfaces";
-import { updateClient } from "../supabase/apiClients";
+import { updateClient } from "../../supabase/apiClients";
 
 
 export async function action({ request, params }: { request: Request, params:Params<string> }){

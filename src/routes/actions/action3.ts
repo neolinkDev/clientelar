@@ -1,5 +1,5 @@
 import { Params, redirect } from 'react-router-dom';
-import { deleteClient } from '../supabase/apiClients';
+import { deleteClient } from '../../supabase/apiClients';
 
 export async function action({ params }: { params: Params<string> }) {
 

@@ -1,5 +1,4 @@
 import { Params, redirect } from "react-router-dom";
-// import { RouteParams } from "../interfaces";
 import { updateClient } from "../../supabase/apiClients";
 
 
@@ -13,7 +12,7 @@ export async function action({ request, params }: { request: Request, params:Par
 }
 
 const validateFormdata = async (data: { [k: string]: FormDataEntryValue }, params: Params<string>) => {
-  console.log(params)
+ 
   const errors = [];
 
   if (Object.values(data).includes('')) {

@@ -3,8 +3,6 @@ import { FormComponent } from '../components/Form';
 import { Error } from '../components/Error'
 import { ErrorType } from '../interfaces';
 
-
-
 function NewClientPage() {
 
   const errors = useActionData() as ErrorType;

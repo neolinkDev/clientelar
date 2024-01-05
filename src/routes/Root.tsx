@@ -1,8 +1,9 @@
 import { Outlet, Link, useLocation } from 'react-router-dom';
 
 function Root() {
-  const location = useLocation();
 
+  const location = useLocation();
+  
   return (
     <div className="md:flex md:min-h-screen">
       <aside className="md:w-1/4 bg-[#20252c] px-5 py-10">

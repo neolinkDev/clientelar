@@ -7,8 +7,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Root from './routes/Root';
 import NewClientPage from './pages/NewClientPage';
 import IndexPage from './pages/IndexPage';
-import { EditClient } from './pages/EditClient';
 import { loader as clientsLoader } from './routes/loaders/loader1';
+import { EditClient } from './pages/EditClient';
 import { loader as editClientLoader } from './routes/loaders/loader2';
 import { action as newClientPageAction } from './routes/actions/action1';
 import { action as editClientAction } from './routes/actions/action2';
@@ -20,28 +20,28 @@ const router = createBrowserRouter([
   {
    path: '/',
    element: <Root />,
-   errorElement: <ErrorPage />,
    children:[
     {
       index: true,
       element: <IndexPage />,
       loader: clientsLoader,
-      // errorElement: <ErrorPage />
+      errorElement: <ErrorPage />
     },
     {
       path: '/clientes/nuevo',
       element: <NewClientPage />,
-      action: newClientPageAction
+      action: newClientPageAction,
+      errorElement: <ErrorPage />
     },
     {
-      path: '/clientes/:clientID/editar',
+      path: '/clientes/:id/editar',
       element: <EditClient />,
       loader: editClientLoader,
       action: editClientAction,
-      // errorElement: <ErrorPage />
+      errorElement: <ErrorPage />
     },
     {
-      path: '/clientes/:clientID/eliminar',
+      path: '/clientes/:id/eliminar',
       action: deleteClientAction
     }
    ]

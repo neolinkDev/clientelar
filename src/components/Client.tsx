@@ -1,8 +1,6 @@
 import { Form, useNavigate } from 'react-router-dom';
 import { ClientProps } from '../interfaces';
 
-
-
 export const Client = ({ client }: ClientProps) => {
 
   const navigate = useNavigate()
@@ -28,10 +26,10 @@ export const Client = ({ client }: ClientProps) => {
         <p><span className='font-bold'>Teléfono: </span>{ phone }</p>
       </td>
 
-      <td className="flex gap-2 px-4 py-2">
+      <td className="flex justify-center gap-2 px-4 py-2">
 
         <button 
-          className="inline-block rounded bg-cyan-600 px-4 py-2 text-xs font-medium text-white hover:bg-cyan-700 uppercase"
+          className=" rounded bg-cyan-600 px-4 py-2 text-xs font-medium text-white hover:bg-cyan-700 uppercase"
           onClick={() => navigate(`/clientes/${id}/editar`) }
         >
           Editar
@@ -44,7 +42,7 @@ export const Client = ({ client }: ClientProps) => {
         >
           <button 
             type='submit'
-            className="inline-block rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700 uppercase">
+            className=" rounded bg-red-600 px-4 py-2 text-xs font-medium text-white hover:bg-red-700 uppercase">
             Eliminar
           </button>
         </Form>

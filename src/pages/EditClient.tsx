@@ -8,7 +8,6 @@ export const EditClient = () => {
   const navigate = useNavigate();
   const client = useLoaderData() as Clients;
   const errors = useActionData() as ErrorType;
-  // console.log(client);
 
   return (
     <>

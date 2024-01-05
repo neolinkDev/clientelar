@@ -9,6 +9,6 @@ export const loader = async ({ params }: { params: Params<string> }) => {
   if (!client || Object.values(client).length === 0) {
     throw new Error('Cliente no existe');
   }
-  console.log(client);
+  
   return client;
 };

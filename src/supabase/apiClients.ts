@@ -32,7 +32,6 @@ export async function getClientById(id: string) {
 
 //
 export async function addClient(data: { [k: string]: FormDataEntryValue }) {
-  console.log(data);
 
   try {
     const { data: newClient, error } = await supabase

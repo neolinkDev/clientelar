@@ -3,7 +3,6 @@ import { useRouteError } from 'react-router-dom';
 export const ErrorPage = () => {
 
   const error = useRouteError() as Error;
-  // console.log(error)
 
   return (
     <div className="grid h-screen place-content-center bg-[#b0bcc9] px-4">
